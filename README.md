@@ -32,7 +32,7 @@ cd my-service
 
 'use strict';
 
-# Lambda needs to run a function, here all the logic need to be in the hello function
+// Lambda needs to run a function, here all the logic need to be in the hello function
 module.exports.hello = async (event) => {
   // Whatever trigger the function is in the event object
   // that can be an http request, an s3 request...
