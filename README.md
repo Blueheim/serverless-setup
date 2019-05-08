@@ -176,3 +176,28 @@ GET https://[id].execute-api.eu-west-3.amazonaws.com/dev/hello
 }
 
 ```
+
+## Access query parameters in function
+
+```js
+
+const levels = ['junior', 'intermediate', 'senior', 'god'];
+
+module.exports.hello = async (event) => {
+ const { index } = event.queryStringParameters;
+ const level = levels[index];
+ ...
+  input: level
+ ...
+}
+
+```
+
+GET https://[id].execute-api.eu-west-3.amazonaws.com/dev/hello?index=1
+
+```json
+{
+  "message": "Go Serverless v1.0! Your function executed successfully!",
+  "input": "intermediate"
+}
+```
